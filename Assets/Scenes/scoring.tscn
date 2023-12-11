@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://cv5w4w7ofa6pt"]
+
+[ext_resource type="FontFile" uid="uid://brkwy0k0ocsf2" path="res://Assets/Fonts/BLOODY.TTF" id="1_eudkb"]
+[ext_resource type="Script" path="res://Assets/Scripts/scoreValue.gd" id="2_j4x3f"]
+[ext_resource type="Script" path="res://Assets/Scenes/Button.gd" id="3_qwtvj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pkbku"]
+font = ExtResource("1_eudkb")
+font_size = 50
+font_color = Color(1, 0.337255, 0.270588, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2mqq1"]
+font = ExtResource("1_eudkb")
+font_size = 50
+font_color = Color(1, 0.337255, 0.270588, 1)
+
+[node name="scoring" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="scoreLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 25.0
+offset_right = 150.0
+offset_bottom = 84.0
+text = "SCORE"
+label_settings = SubResource("LabelSettings_pkbku")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="scoreValue" type="Label" parent="."]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 25.0
+offset_right = 200.0
+offset_bottom = 84.0
+text = "0"
+label_settings = SubResource("LabelSettings_2mqq1")
+vertical_alignment = 1
+script = ExtResource("2_j4x3f")
+
+[node name="rampageChecker" type="Timer" parent="scoreValue"]
+autostart = true
+
+[node name="Button(Debug)" type="Button" parent="."]
+layout_mode = 0
+offset_left = 484.0
+offset_top = 313.0
+offset_right = 525.0
+offset_bottom = 344.0
+text = "feur"
+script = ExtResource("3_qwtvj")
